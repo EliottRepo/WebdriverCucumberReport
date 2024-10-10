@@ -1,0 +1,11 @@
+{
+    "validUser": {
+      "username": "airmore15@hotmail.com",
+      "password": "Resojolinas1990"
+    },
+    "invalidUser": {
+      "username": "foobar",
+      "password": "barfoo"
+    }
+  }
+  

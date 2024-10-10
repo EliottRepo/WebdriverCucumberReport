@@ -1,0 +1,37 @@
+# Node modules
+node_modules/
+.npm/
+
+# Log files
+logs/
+*.log
+*.log.*
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# WebdriverIO reports
+reports/html/
+reports/json/
+
+# Build directories
+dist/
+build/
+
+# IDE/Editor specific files
+.vscode/
+.idea/
+*.sublime-workspace
+
+# System specific files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+
+# Test and debug files
+*.tmp
+.run/
