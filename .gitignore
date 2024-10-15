@@ -20,7 +20,7 @@ dist/
 build/
 
 # IDE/Editor specific files
-.vscode/
+#.vscode/
 .idea/
 *.sublime-workspace
 
@@ -29,8 +29,8 @@ build/
 Thumbs.db
 
 # Environment files
-.env
-.env.local
+#.env
+#.env.local
 
 # Test and debug files
 *.tmp

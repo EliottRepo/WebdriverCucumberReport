@@ -28,7 +28,7 @@ When(/^User clicks in Sign In button$/, async () => {
 });
 
 Given(/^User am on the (\w+) page$/, async (page) => {
-    await LoginPage.open();  // Adjust based on your implementation
+    await LoginPage.openBge();  // Adjust based on your implementation
 });
 
 When(/^User login with (.+) credentials and click Continue button$/, async (userType) => {

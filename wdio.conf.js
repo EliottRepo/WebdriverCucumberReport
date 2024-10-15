@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-
+import { generate } from 'multiple-cucumber-html-reporter';
 export const config = {
     //
     // ====================
@@ -53,8 +53,17 @@ export const config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
-    },
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+            args: [
+                //'--headless', // Optional: Run in headless mode
+                '--disable-web-security',
+                '--disable-features=WebDriverBiDi',
+                '--no-sandbox',
+                '--disable-dev-shm-usage',
+                '--remote-debugging-port=0' // Disable remote debugging
+            ],
+        },    },
         // {
         //     browserName: 'MicrosoftEdge'
         // }
@@ -213,6 +222,7 @@ export const config = {
         // Define the directories for reports
         const jsonDir = './reports/json';
         const htmlDir = './reports/html';
+        const screenshotsDir = './reports/screenshots';
 
         // Helper function to delete all files in a directory
         const deleteFilesInDirectory = (directory) => {
@@ -224,6 +234,7 @@ export const config = {
             }
         };
         // Clean up existing files in the reports directories
+        deleteFilesInDirectory(jsonDir);
         deleteFilesInDirectory(jsonDir);
         deleteFilesInDirectory(htmlDir);
     },
@@ -280,9 +291,11 @@ export const config = {
      * @param {number}             result.duration  duration of scenario in milliseconds
      * @param {object}             context          Cucumber World object
      */
-    // afterStep: function (step, scenario, result, context) {
-    // },
-    /**
+    afterStep: async function (step, scenario, result, context) {
+        await browser.saveScreenshot(`./reports/screenshots/${step}.png`);
+       //${Date.now()}
+    },
+    /*
      *
      * Runs after a Cucumber Scenario.
      * @param {ITestCaseHookParameter} world            world object containing information on pickle and test step
