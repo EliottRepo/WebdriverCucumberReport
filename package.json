@@ -13,8 +13,8 @@
     "wdio-wait-for": "^3.0.11"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js",
-    "report": "node ./UI_Tests/helpers/generate-cucumber-html-report.js"
+    "report": "node ./UI_Tests/helpers/generate-cucumber-html-report.js",
+    "tests": "wdio run ./wdio.conf.js"
   },
   "dependencies": {
     "dotenv": "^16.4.5"
