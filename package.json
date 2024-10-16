@@ -14,7 +14,10 @@
   },
   "scripts": {
     "report": "node ./UI_Tests/helpers/generate-cucumber-html-report.js",
+    "bytag": "npx wdio run ./wdio.conf.js --cucumberOpts.tag=$DesiredTag",
     "tests": "wdio run ./wdio.conf.js"
+
+
   },
   "dependencies": {
     "dotenv": "^16.4.5"

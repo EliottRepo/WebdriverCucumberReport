@@ -54,20 +54,11 @@ Follow these steps to set up the project:
 To run the automated tests, use the following command:
 
 ```bash
-npm run tests
+npm run wdio
 ```
 
 This will execute the tests as defined in the feature files located in the `UI_Tests/features` directory.
 
-## Running Tests by Tags
-
-To run the automated tests, use:
-
-```bash
-npm run tag --tag=@sampletag
-```
-
-This will execute the tests as defined in the feature files located in the `UI_Tests/features` directory.
 ## Generating Reports
 
 The framework generates JSON reports using the **wdio-cucumberjs-json-reporter**. After running the tests, you can generate an HTML report by executing:
